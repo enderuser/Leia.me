@@ -1,5 +1,6 @@
-# Leia.me
-Reforço do Aprendizado adquirido na Pythonando Programming Path
+# Leia.Me
+
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Comece por aqui
 
@@ -16,3 +17,10 @@ Feito isso, certifique-se de **ativar** o ambiente virtual criado, execute o com
 Outro detalhe importante, nunca enviamos o arquivo do banco de dados para o Github tambem, portanto, vai ser necessário agora rodar as migrações para criar todas as tabelas localmente no seu DB. Execute o comando a seguir `python manage.py migrate`, aguarde as tabelas serem criadas localmente.
 
 Repara que seu banco de dados local acabou de ser criado, portanto, não existe nenhum usuario cadastrado. Vamos resolver isso. Execute o comando `python manage.py createsuperuser`. 
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
