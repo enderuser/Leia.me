@@ -42,3 +42,5 @@ No Django, o WSGI é usado para servir nosso aplicativo em servidores web tradic
 Novamente, por padrão, geralmente não precisamos modificar este arquivo, a menos que estejamos fazendo algo muito específico que requer configuração personalizada do WSGI.
 
 ## Usuarios
+Inicialmente vamos trabalhar apenas com a tela de Login, e uma tela de cadastro dos usuário.
+
