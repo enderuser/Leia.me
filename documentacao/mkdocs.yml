@@ -1,1 +1,5 @@
 site_name: Leia.Me
+
+nav:
+  - Home: index.md
+  - Documentação: documentacao.md
