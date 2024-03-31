@@ -54,6 +54,17 @@ Novamente, por padrão, geralmente não precisamos modificar este arquivo, a men
 
 ## Usuarios
 Inicialmente vamos trabalhar apenas com a tela de Login, e uma tela de cadastro dos usuário.
+
+**Tela de Login do Usuário;**
+![Tela de Login do Usuário](./img/UsuarioLogin.png)
+
+Disponibilizado uma tela de login simplificada, onde o usuário vai acessar a plataforma através de email e senha, podendo salvar seu acesso no navegador.
+
+**Tela de Cadastro do Usuário;**
+![Tela de Cadastro do Usuário](./img/UsuarioCadastro.png)
+
+Cadastro do usuário tambem simplificado, porem com aproveitamento do espaço em tela para divulgar alguns números da plataforma, como total de acerto publico atualizado disponivel para emprestimo, total de paginas lidas, entre outros detalhes para incentivar os leitores a envolver-se nessa comunidade.
+
 ### Arquivo admin.py
 Anotações importantes sobre o admin aqui...
 ### Arquivo apps.py
