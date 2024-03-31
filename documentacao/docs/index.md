@@ -14,7 +14,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 
 
-3. Feito isso, certifique-se de **ativar** o ambiente virtual criado, execute o comando; `.\venv\Scripts\activate.ps1` - para ativar o ambiente.
+3. Feito isso, certifique-se de **ativar** o ambiente virtual criado, execute o comando; `.\venv\Scripts\activate.ps1` - para ativar o ambiente no Windows.
 
 > **Instalando as Dependencias do Projeto**: Lembre-se de rodar o comando `pip install -r requirements.txt`, aguarde a instalação completar. 
 
