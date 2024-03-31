@@ -16,14 +16,17 @@ Definimos tambem variáveis importantes como DEBUG (para o ambiente de desenvolv
 
 Este arquivo é fundamental para configurar o comportamento do nosso aplicativo Django e é onde passaremos a maior parte do tempo configurando nosso projeto.
 
-1. Banco de dados local
-<div align="center">
-  <img src="https://github.com/KaykyDevPe/PumpSize/assets/61158448/4230bb0a-1ee3-4ad9-b531-c2ad85b775a8">
-  <h5>Para teste local manter essas linhas de código sem os comentários.</h5>
-  <strong>A partir do momento que for testar em produção, retirar os comentarios abaixo;</strong>
-  <img src="" width="100%" alt="Screenshot">
-</div>
-![Screenshot](https://github.com/KaykyDevPe/PumpSize/assets/61158448/4230bb0a-1ee3-4ad9-b531-c2ad85b775a8)
+**Banco de Dados Local**
+  
+  Para teste local manter essas linhas de código sem os comentários.
+  ![Banco de Dados Local](./img/DbLocal.png)
+
+**Banco de Dados em Produção**
+
+  A partir do momento que for testar em produção, retirar os comentarios abaixo;
+  ![Banco de Dados em Produção](./img/DbProducao.png)
+
+
 ### Arquivo urls.py
 Este arquivo é onde definimos os padrões de URL para nosso aplicativo. Ele mapeia URLs para views específicas no projeto.
 
@@ -51,4 +54,16 @@ Novamente, por padrão, geralmente não precisamos modificar este arquivo, a men
 
 ## Usuarios
 Inicialmente vamos trabalhar apenas com a tela de Login, e uma tela de cadastro dos usuário.
+### Arquivo admin.py
+Anotações importantes sobre o admin aqui...
+### Arquivo apps.py
+Anotações importantes sobre o admin aqui...
+### Arquivo models.py
+Anotações importantes sobre o admin aqui...
+### Arquivo tests.py
+Anotações importantes sobre o admin aqui...
+### Arquivo urls.py
+Anotações importantes sobre o admin aqui...
+### Arquivo views.py
+Anotações importantes sobre o admin aqui...
 
