@@ -3,92 +3,92 @@
 {% block 'title' %}Cadastrar Usuário{% endblock 'title' %}
 
 {% block 'body' %}
+<div class="container">
 <main>
     <div class="py-5 text-center">
-    <img class="d-block mx-auto mb-4" src="{% static '../static/img/book_13960538.png' %}" alt="" width="72" height="72">
-    <h2>Cadastro de Usuário</h2>
-    <p class="lead">Cadastre aqui o seu login e senha de acesso à plataforma para doar um livro ou solicitar a doação.</p>
+        <img class="d-block mx-auto mb-4" src="{% static '../static/img/book_13960538.png' %}" alt="" width="72" height="72">
+        <h2>Cadastro de Usuário</h2>
+        <p class="lead">Cadastre aqui o seu login e senha de acesso à plataforma para doar um livro ou solicitar a doação. Já possui uma conta, <a href="{% url "LoginUser" %}">Acesse Aqui!</a></p>
     </div>
-    <div class="row g-5">
-    <div class="col-md-5 col-lg-4 order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-primary">Envolva-se</span>
-        <span class="badge bg-primary rounded-pill">!</span>
-        </h4>
-        <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-            <h6 class="my-0">Acervo Publico</h6>
-            <small class="text-body-secondary">Para Doação: 1500</small>
-            </div>
-            <span class="text-body-secondary">Livros Disponiveis</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-            <h6 class="my-0">Leituras em Foco</h6>
-            <small class="text-body-secondary">Paginas Lidas: 9600</small>
-            </div>
-            <span class="text-body-secondary">Volume total</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-            <h6 class="my-0">Trocas Efetuadas</h6>
-            <small class="text-body-secondary">860 Trocas com Sucesso</small>
-            </div>
-            <span class="text-body-secondary">Em 2024</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+    <div class="container">
+        <div class="container">
+                <div class="row g-3">
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Envolva-se</span>
+                    <span class="badge bg-primary rounded-pill">!</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                        <h6 class="my-0">Acervo Publico</h6>
+                        <small class="text-body-secondary">Para Doação: 1500</small>
+                        </div>
+                        <span class="text-body-secondary">Livros Disponiveis</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                        <h6 class="my-0">Leituras em Foco</h6>
+                        <small class="text-body-secondary">Paginas Lidas: 9600</small>
+                        </div>
+                        <span class="text-body-secondary">Volume total</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                        <h6 class="my-0">Trocas Efetuadas</h6>
+                        <small class="text-body-secondary">860 Trocas com Sucesso</small>
+                        </div>
+                        <span class="text-body-secondary">Em 2024</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
 
-            <span class="text-success">Cadastre-se ao lado e faça parte dessa comunidade</span>
-        </li>
-        <!--li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-        </li-->
-        </ul>
-    </div>
-    <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Dados de Acesso</h4>
-        <form class="needs-validation" novalidate>
-        <div class="row g-3">
-            <div class="col-sm-6">
-            <label for="firstName" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-            <div class="invalid-feedback">
-                Valid first name is required.
-            </div>
-            </div>
-            <div class="col-sm-6">
-            <label for="lastName" class="form-label">Email</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-            <div class="invalid-feedback">
-                Valid last name is required.
-            </div>
-            </div>
+                        <span class="text-success">Cadastre-se ao lado e faça parte dessa comunidade</span>
+                    </li>
+                    </ul>
+                </div>
+                <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">Dados de Acesso</h4>
+                    <form action="{% url "CreateUser" %}" method="POST" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="row g-3 mb-2">
+                        <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" name="nome" required>
+                        <div class="invalid-feedback">
+                            Preencha com seu primeiro nome.
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="seuEmail" placeholder="" name="email" required>
+                        <div class="invalid-feedback">
+                            Digite um email válido.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 mb-2">
+                        <div class="col-md-6">
+                            <label for="cc-name" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="cc-name" placeholder="" name="senha" required>
+                            <small class="text-body-secondary">Minimo de 8 caracteres...</small>
+                            <div class="invalid-feedback">
+                                Informe uma senha para acesso.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cc-number" class="form-label">Confirmar Senha</label>
+                            <input type="password" class="form-control" id="cc-number" placeholder="" name="confirmar_senha" required>
+                            <div class="invalid-feedback">
+                                Confirme a senha que escolheu.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-100 btn btn-primary btn-lg" value="SALVAR" type="submit">Cadastrar Usuário</button>
+                    </form>
+                </div>
+                </div>
         </div>
-        <div class="row gy-3">
-            <div class="col-md-6">
-            <label for="cc-name" class="form-label">Senha</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="" required>
-            <small class="text-body-secondary">Minimo de 8 caracteres...</small>
-            <div class="invalid-feedback">
-                Name on card is required
-            </div>
-            </div>
-            <div class="col-md-6">
-            <label for="cc-number" class="form-label">Confirmar Senha</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="" required>
-            <div class="invalid-feedback">
-                Credit card number is required
-            </div>
-            </div>
-        </div>
-
-        <hr class="my-4">
-
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Cadastrar Usuário</button>
-        </form>
-    </div>
     </div>
 </main>
+</div>
 {% endblock 'body' %}
