@@ -47,6 +47,6 @@ def UserLoginView(request):
             messages.add_message(request, constants.ERROR, 'Usuário ou senha inválidos')
             return render(request, 'login_user.html')
         
-def logout(request):
+def UserLogoutView(request):
     logout(request)
     return redirect('/user/login')
