@@ -20,6 +20,7 @@ class Livro(models.Model):
         )
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     titulo = models.CharField(max_length=100)
+    autor = models.CharField(max_length=100)
     descricao = models.TextField()
     foto = models.ImageField(upload_to="capas_livros")
     estado = models.CharField(max_length=40)
