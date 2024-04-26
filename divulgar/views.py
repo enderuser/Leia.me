@@ -10,5 +10,5 @@ def DivulgarUpdateView(request):
     pass
 
 def DivulgarListView(request):
-    pass
+    return render (request, 'list_livro.html')
 
