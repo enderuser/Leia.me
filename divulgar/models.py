@@ -23,7 +23,7 @@ class Livro(models.Model):
     autor = models.CharField(max_length=100)
     descricao = models.TextField()
     foto = models.ImageField(upload_to="capas_livros")
-    estado = models.CharField(max_length=40)
+    estado = models.CharField(max_length=2)
     cidade = models.CharField(max_length=50)
     telefone = models.CharField(max_length=15)
     tags = models.ManyToManyField(Tag)

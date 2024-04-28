@@ -64,11 +64,12 @@
         </div>
         <div class="col-md-7 col-lg-8">
           <h4 class="mb-3">Dados do Livro</h4>
-          <form class="needs-validation" novalidate>
+
+          <form action="{% url "DivulgarCreate" %}" class="needs-validation" novalidate method="POST" enctype='multipart/form-data'>{% csrf_token %}
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">Titulo</label>
-                <input type="text" class="form-control" id="origem" placeholder="" value="" required>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   É necessário informar o Titulo do livro.
                 </div>
@@ -76,7 +77,7 @@
   
               <div class="col-sm-6">
                 <label for="lastName" class="form-label">Autor</label>
-                <input type="text" class="form-control" id="destino" placeholder="" value="" required>
+                <input type="text" class="form-control" name="autor" id="autor" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   É necessário informar um Autor.
                 </div>
@@ -84,83 +85,110 @@
   
               <div class="col-12">
                 <label for="email" class="form-label">Descrição <span class="text-muted">(*)</span></label>
-                <input type="email" class="form-control" id="passageiros" placeholder="descrição do livro">
+                <input type="text" class="form-control" name="descricao" id="descricao" placeholder="descrição do livro">
                 <div class="invalid-feedback">
                   Necessário informar a descrição do livro.
                 </div>
               </div>
   
               <div class="col-12">
-                <label for="address" class="form-label">Data e Hora da Viagem</label>
-                <input type="text" class="form-control" id="datahora" placeholder="" required>
-                <div class="invalid-feedback">
-                  Gentileza informar a data e hora da viagem escolhida pelo passageiro.
+                <label for="address" class="form-label">Capa do Livro</label>
+                <div class="input-group">
+                  <input type="file" name="foto" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+
                 </div>
               </div>
   
               <div class="col-md-5">
                 <label for="country" class="form-label">Estado</label>
-                <select class="form-select" id="country" required>
+                <select name="estado" class="form-select" id="estado" required>
                   <option value="">Escolha...</option>
                   <option value="AC">AC</option>
-                  <option value="">AL</option>
-                  <option value="">AP</option>
-                  <option value="">AM</option>
-                  <option value="">BA</option>
-                  <option value="">CE</option>
-                  <option value="">DF</option>
-                  <option value="">ES</option>
-                  <option value="">GO</option>
-                  <option value="">MA</option>
-                  <option value="">MT</option>
-                  <option value="">MS</option>
-                  <option value="">MG</option>
-                  <option value="">PA</option>
-                  <option value="">PB</option>
-                  <option value="">PR</option>
-                  <option value="">PE</option>
-                  <option value="">PI</option>
-                  <option value="">RJ</option>
-                  <option value="">RN</option>
-                  <option value="">RS</option>
-                  <option value="">RO</option>
-                  <option value="">RR</option>
-                  <option value="">SC</option>
-                  <option value="">SP</option>
-                  <option value="">SE</option>
-                  <option value="">TO</option>
+                  <option value="AL">AL</option>
+                  <option value="AP">AP</option>
+                  <option value="AM">AM</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MT">MT</option>
+                  <option value="MS">MS</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PR">PR</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RS">RS</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                  <option value="SE">SE</option>
+                  <option value="TO">TO</option>
                 </select>
                 <div class="invalid-feedback">
                   Gentileza necessário escolher a UF.
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-7 mb-2">
                 <label for="state" class="form-label">Status</label>
-                <select class="form-select" id="state" required>
+                <select class="form-select" name="status" id="status" required>
                   <option value="">Escolha...</option>
-                  <option>Goiania</option>
-                  <option>Palmas</option>
-                  <option>Curitiba</option>
-                  <option>Colinas</option>
-                  <option>Lajeado</option>
+                  <option value="P">Para Doação</option>
+                  <option value="D">Doação Realizada</option>
                 </select>
                 <div class="invalid-feedback">
                   Necessario escolher um Status.
                 </div>
               </div>
-              <div class="col-md-3">
-                <label for="zip" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="zip" placeholder="" required>
+            </div>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Cidade</label>
+                <input type="text" name="cidade" class="form-control" id="cidade" placeholder="" value="" required>
                 <div class="invalid-feedback">
-                  Necessário informar o CEP.
+                  É necessário informar a Cidade.
+                </div>
+              </div>
+              <div class="col-sm-6 mb-2">
+                <label for="lastName" class="form-label">Telefone</label>
+                <input type="text" class="form-control" name="telefone" id="autor" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  É necessário informar um Telefone.
                 </div>
               </div>
             </div>
-  
+            <div class="col-md mb-2">
+              <label for="state" class="form-label">Tags</label>
+              <select class="form-select" name="tags" multiple id="state" required>
+                {% for tag in tags%}
+                <option value="{{tag.id}}">{{tag}}</option>
+                {% endfor %}
+              </select>
+              <div class="invalid-feedback">
+                Necessario escolher um Status.
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="state" class="form-label">Genero</label>
+              <select class="form-select" name="genero" id="genero" required>
+                {% for genero in generos %}
+                <option value="{{genero.id}}">{{genero}}</option>
+                {% endfor %}
+              </select>
+              <div class="invalid-feedback">
+                Necessario escolher um Genero.
+              </div>
+            </div>
             <hr class="my-4">
   
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="btn btn-primary me-md-2" type="button">Cadastrar</button>
+              <button class="btn btn-primary me-md-2" type="submit">Cadastrar</button>
               <a class="btn btn-danger" type="button" href="{% url "DivulgarList" %}">Cancelar</a>
             </div>
           </form>
