@@ -52,7 +52,7 @@ No Django, o WSGI é usado para servir nosso aplicativo em servidores web tradic
 
 Novamente, por padrão, geralmente não precisamos modificar este arquivo, a menos que estejamos fazendo algo muito específico que requer configuração personalizada do WSGI.
 
-## Usuarios
+## APP Usuarios
 Inicialmente vamos trabalhar apenas com a tela de Login, e uma tela de cadastro dos usuário.
 
 **Tela de Login do Usuário;**
@@ -81,3 +81,31 @@ As rotas para a aplicação de usuários inicialmente vamos trabalhar com uma us
 
 **UserLoginView;** responde as requisições da rota user/login/, e autentica os usuários que tenham permissão de acesso válidas na aplicação.
 
+## APP Divulgar
+Aqui vamos trabalhar apenas com a tela de Cadastro de Livro, e uma tela de Listar os Livros ja cadastrados para Doação.
+
+**Tela de Cadastro de Livros;**
+![Tela de Cadastro de Livros](./img/CadastroLivro.png)
+
+Disponibilizado uma tela de Cadastro para os incluir novos livros de forma simplificada, onde o usuário vai incluir os dados do livro que deseja doar, e acompanhar os livros ja cadastrados na tela de listagem.
+
+**Tela de Listagem dos Livros;**
+![Tela de Listagem dos Livros](./img/.png)
+
+Listagem simplificada dos livros cadastrados, porem com aproveitamento do espaço em tela para detalhes importantes.
+
+### Arquivo admin.py
+Anotações importantes sobre o admin aqui...
+### Arquivo apps.py
+Anotações importantes sobre o admin aqui...
+### Arquivo models.py
+Anotações importantes sobre o admin aqui...
+### Arquivo tests.py
+Anotações importantes sobre o admin aqui...
+### Arquivo urls.py
+As rotas para a aplicação divulgar inicialmente vamos trabalhar com uma divulgar/create/ para cadastrar novos Livros na aplicação, e uma divulgar/list/ para listar os Livros que tenham sido cadastrados para Doação na aplicação.
+
+### Arquivo views.py
+**DivulgarCreateView;** responde as requisições da rota divulgar/create/, e valida os dados para inserir novos Livros no banco de dados.
+
+**DivulgarListView;** responde as requisições da rota divulgar/list/, e lista os Livros que tenham sido cadastrados para Doação na aplicação.
