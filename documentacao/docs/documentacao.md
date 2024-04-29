@@ -90,7 +90,7 @@ Aqui vamos trabalhar apenas com a tela de Cadastro de Livro, e uma tela de Lista
 Disponibilizado uma tela de Cadastro para os incluir novos livros de forma simplificada, onde o usuário vai incluir os dados do livro que deseja doar, e acompanhar os livros ja cadastrados na tela de listagem.
 
 **Tela de Listagem dos Livros;**
-![Tela de Listagem dos Livros](./img/.png)
+![Tela de Listagem dos Livros](./img/ListaLivro.png)
 
 Listagem simplificada dos livros cadastrados, porem com aproveitamento do espaço em tela para detalhes importantes.
 
