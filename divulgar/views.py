@@ -52,6 +52,9 @@ def DivulgarCreateView(request):
 def DivulgarUpdateView(request):
     pass
 
+@login_required
 def DivulgarListView(request):
-    return render (request, 'list_livro.html')
+    if request.method == "GET":
+        livros = Livro.objects.filter(usuario=request.user)
+        return render (request, 'list_livro.html', {'livros':livros})
 
