@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Tag, Genero, Livro
 from django.contrib import messages
@@ -58,3 +58,14 @@ def DivulgarListView(request):
         livros = Livro.objects.filter(usuario=request.user)
         return render (request, 'list_livro.html', {'livros':livros})
 
+def DivulgarDeleteView(request, id):
+    livro = Livro.objects.get(id=id)
+
+    if not livro.usuario == request.user:
+        messages.add_message(request, constants.ERROR, 'Esse Livro não é seu!')
+        return redirect('/divulgar/list')
+    
+    livro.delete()
+    messages.add_message(request, constants.SUCCESS, 'Livro Removido com Sucesso.')
+
+    return redirect('/divulgar/list')
