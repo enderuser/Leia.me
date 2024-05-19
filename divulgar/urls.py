@@ -6,5 +6,5 @@ urlpatterns = [
     path('update/', views.DivulgarUpdateView, name="DivulgarUpdate"),
     path('delete/<int:id>', views.DivulgarDeleteView, name="DivulgarDelete"),
     path('list/', views.DivulgarListView, name="DivulgarList"),
-    
+    path('detail/<int:id>', views.DivulgarDetailView, name="ver_livro"),
 ]

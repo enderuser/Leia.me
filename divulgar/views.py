@@ -55,7 +55,7 @@ def DivulgarUpdateView(request):
 @login_required
 def DivulgarListView(request):
     if request.method == "GET":
-        livros = Livro.objects.filter(usuario=request.user)
+        livros = Livro.objects.filter(usuario=request.user, status="P")
         return render (request, 'list_livro.html', {'livros':livros})
 
 def DivulgarDeleteView(request, id):
@@ -69,3 +69,8 @@ def DivulgarDeleteView(request, id):
     messages.add_message(request, constants.SUCCESS, 'Livro Removido com Sucesso.')
 
     return redirect('/divulgar/list')
+
+def DivulgarDetailView(request, id):
+    if request.method == "GET":
+        livro = Livro.objects.get(id=id)
+        return render(request, 'detail_livro.html', {'livro': livro})
